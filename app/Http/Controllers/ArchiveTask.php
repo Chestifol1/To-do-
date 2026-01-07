@@ -12,7 +12,7 @@ class ArchiveTask extends Controller
 
         $action->execute($task);
 
-        return view('tasks.partials.completed', compact('task'));
+        return view('tasks.partials.archived', compact('task'));
     }
 }
 

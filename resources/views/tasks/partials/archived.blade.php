@@ -3,8 +3,7 @@
 
 
     @if($task->isArchived())
-        test{{ $task->title }}
-
+        {{ $task->title }}
     @endif
 
 </li>

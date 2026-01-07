@@ -19,7 +19,7 @@ class Task extends Model
     ];
 
     protected $casts = [
-        'dua_at' => 'datetime',
+        'due_at' => 'datetime',
         'assignee_id' => 'integer',
         'reviewer_id' => 'integer',
         'status' => TaskStatus::class,
@@ -40,7 +40,7 @@ class Task extends Model
 
     }
 
-    public function IsArchived(): bool
+    public function isArchived(): bool
     {
 
         return $this->status === TaskStatus::Archived;
