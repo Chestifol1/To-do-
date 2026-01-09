@@ -22,9 +22,13 @@ class TaskController extends Controller
     public function index()
 
     {
-        $tasks = Task::latest()->get();
 
-        return view('tasks.index', compact('tasks'));
+
+        $tasks = Task::latest()->get()->groupBy('status.value');
+
+        $statuses = TaskStatus::cases();
+
+        return view('tasks.index', compact('tasks' , 'statuses'));
     }
 
     /**
