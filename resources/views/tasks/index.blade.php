@@ -15,12 +15,11 @@
                         </span>
                         </h3>
 
-                        @include('tasks.partials.create-task-form', ['status' => $status])
+                        <livewire:create-task :status="$status" :key="'create-task-'.$status->value" />
 
                         <div class="mt-6 space-y-4">
-                            @foreach($tasks->get($status->value, []) as $task)
-                                <x-task-card :task="$task" />
-                            @endforeach
+                            <livewire:task-list :status="$status" :key="'list-'.$status->value" />
+
                         </div>
                     </div>
                 @endforeach
