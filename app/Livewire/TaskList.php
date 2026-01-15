@@ -13,6 +13,7 @@ class TaskList extends Component
     public TaskStatus $status;
 
     #[On('task-created')]
+    #[On('task-updated')]
 
     public function refresh(): void {}
 

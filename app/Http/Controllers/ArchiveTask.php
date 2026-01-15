@@ -7,6 +7,9 @@ use App\Models\Task;
 
 class ArchiveTask extends Controller
 {
+
+    private string $name;
+
     public function __invoke(Task $task, ArchiveTaskAction $action)
     {
 
